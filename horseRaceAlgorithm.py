@@ -76,9 +76,22 @@ def race(horses, hurdle, stayCount, horseAlive, deaths):
 
     return horses, hurdle, stayCount, horseAlive, horseRank, nameRank
 
+# Checks if the number of horses is valid
+while True:
+    numOfHorses = int(input("Enter the number of horses: "))
+    try:
+        # Checks if the number of horses is between 2 and 15
+        if numOfHorses < 2:
+            print("You need at least 2 horses to start")
+            continue
+        elif numOfHorses > 15:
+            print("You can only have a maximum of 15 horses")
+            continue
+        break
+    except ValueError:
+        print("Please enter a valid number")
+        continue
 
-
-numOfHorses = int(input("Enter the number of horses: "))
 for i in range(numOfHorses):
     horse = input(f"Enter the name of horse {i + 1}: ")
 
